@@ -1,0 +1,117 @@
+/* Blog Sayfası Stilleri */
+.blog-page {
+    padding: 5rem 2rem;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.blog-header {
+    margin-bottom: 3rem;
+}
+
+.blog-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Filtreler */
+.blog-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    padding-right: 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-box i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.category-filter select {
+    padding: 0.8rem 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.page-dots {
+    color: #666;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .blog-filters {
+        flex-direction: column;
+    }
+
+    .blog-header h1 {
+        font-size: 2rem;
+    }
+
+    .pagination {
+        gap: 0.3rem;
+    }
+
+    .page-btn {
+        width: 35px;
+        height: 35px;
+    }
+} 

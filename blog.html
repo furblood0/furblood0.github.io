@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kişisel Web Sitem</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header>
+      <nav class="navbar">
+          <div class="logo">
+              <h1>Furkan Fidan</h1>
+          </div>
+          <ul class="nav-links">
+              <li><a href="#home">Ana Sayfa</a></li>
+              <li><a href="#about">Hakkımda</a></li>
+              <li><a href="#projects">Projeler</a></li>
+              <li><a href="#contact">İletişim</a></li>
+          </ul>
+      </nav>
+  </header>
+
+    <!-- Blog Sayfası İçeriği -->
+    <main class="blog-page">
+        <div class="container">
+            <div class="blog-header">
+                <h1>Blog Yazıları</h1>
+                <div class="blog-filters">
+                    <div class="search-box">
+                        <input type="text" placeholder="Blog yazılarında ara...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="category-filter">
+                        <select id="categorySelect">
+                            <option value="">Tüm Kategoriler</option>
+                            <option value="teknoloji">Teknoloji</option>
+                            <option value="tasarim">Tasarım</option>
+                            <option value="gelistirme">Geliştirme</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Blog kartları (6 adet gösterilecek) -->
+                <article class="blog-card">
+                    <!-- Blog kartı içeriği (ana sayfadaki gibi) -->
+                </article>
+                <!-- Diğer blog kartları -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-dots">...</span>
+                <button class="page-btn">10</button>
+                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="js/blog.js"></script>
+</body>
+</html> 
