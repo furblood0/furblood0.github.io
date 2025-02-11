@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java ile Oyun Geliştirme: Başlangıç Rehberi - Furkan Fidan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Furkan Fidan</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Ana Sayfa</a></li>
+                <li><a href="../index.html#about">Hakkımda</a></li>
+                <li><a href="../index.html#projects">Projeler</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../index.html#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="post-container">
+        <article class="post">
+            <div class="post-header">
+                <h1>Java ile Oyun Geliştirme: Başlangıç Rehberi</h1>
+                <div class="post-meta">
+                    <span><i class="far fa-calendar"></i> 20 Mart 2024</span>
+                    <span><i class="far fa-clock"></i> 8 dk okuma</span>
+                    <span><i class="fas fa-tag"></i> Oyun Geliştirme</span>
+                </div>
+            </div>
+
+            <img src="../images/img1.png" alt="Java Oyun Geliştirme" class="post-image">
+
+            <div class="post-content">
+                <h2>Giriş</h2>
+                <p>Java, güçlü ve çok yönlü bir programlama dili olarak oyun geliştirme için mükemmel bir seçenektir. Bu yazıda, Java ile oyun geliştirmeye başlamak isteyenler için temel kavramları, araçları ve adım adım bir örnek projeyi ele alacağız.</p>
+
+                <h2>Java ile Oyun Geliştirme Araçları</h2>
+                <p>Java'da oyun geliştirmek için kullanabileceğiniz popüler framework ve kütüphaneler:</p>
+                <ul>
+                    <li><strong>LibGDX:</strong> En popüler Java oyun framework'ü</li>
+                    <li><strong>LWJGL:</strong> Hafif Java oyun kütüphanesi</li>
+                    <li><strong>JavaFX:</strong> Modern UI ve 2D oyunlar için</li>
+                    <li><strong>Swing:</strong> Basit 2D oyunlar için</li>
+                    <li><strong>Processing:</strong> Görsel uygulamalar için</li>
+                </ul>
+
+                <h2>Temel Kavramlar</h2>
+                <p>Oyun geliştirmede bilmeniz gereken temel kavramlar:</p>
+                <ul>
+                    <li>Game Loop (Oyun Döngüsü)</li>
+                    <li>Sprite ve Animation</li>
+                    <li>Collision Detection (Çarpışma Tespiti)</li>
+                    <li>Input Handling (Girdi İşleme)</li>
+                    <li>Scene Management (Sahne Yönetimi)</li>
+                </ul>
+
+                <h2>Basit Bir Oyun Örneği</h2>
+                <p>İşte basit bir 2D oyun için temel kod yapısı:</p>
+
+                <pre><code class="language-java">
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class SimpleGame extends JPanel implements KeyListener {
+    private int playerX = 100;
+    private int playerY = 100;
+    
+    public SimpleGame() {
+        setPreferredSize(new Dimension(800, 600));
+        setBackground(Color.BLACK);
+        setFocusable(true);
+        addKeyListener(this);
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.RED);
+        g.fillRect(playerX, playerY, 50, 50);
+    }
+    
+    @Override
+    public void keyPressed(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_LEFT:
+                playerX -= 5;
+                break;
+            case KeyEvent.VK_RIGHT:
+                playerX += 5;
+                break;
+            case KeyEvent.VK_UP:
+                playerY -= 5;
+                break;
+            case KeyEvent.VK_DOWN:
+                playerY += 5;
+                break;
+        }
+        repaint();
+    }
+    
+    // KeyListener'ın diğer metodları...
+    
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Simple Game");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(new SimpleGame());
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
+                </code></pre>
+
+                <h2>Game Loop Yapısı</h2>
+                <p>Profesyonel oyunlarda kullanılan temel game loop yapısı:</p>
+
+                <pre><code class="language-java">
+public class GameLoop implements Runnable {
+    private boolean running = false;
+    private final double UPDATE_CAP = 1.0/60.0;
+    
+    public void run() {
+        running = true;
+        
+        double firstTime = 0;
+        double lastTime = System.nanoTime() / 1000000000.0;
+        double passedTime = 0;
+        double unprocessedTime = 0;
+        
+        while(running) {
+            firstTime = System.nanoTime() / 1000000000.0;
+            passedTime = firstTime - lastTime;
+            lastTime = firstTime;
+            
+            unprocessedTime += passedTime;
+            
+            while(unprocessedTime >= UPDATE_CAP) {
+                unprocessedTime -= UPDATE_CAP;
+                update();
+            }
+            
+            render();
+        }
+    }
+    
+    private void update() {
+        // Oyun mantığı güncelleme
+    }
+    
+    private void render() {
+        // Görsel güncelleme
+    }
+}
+                </code></pre>
+
+                <h2>Çarpışma Tespiti</h2>
+                <p>Basit bir dikdörtgen çarpışma kontrolü örneği:</p>
+
+                <pre><code class="language-java">
+public boolean checkCollision(Rectangle r1, Rectangle r2) {
+    return r1.x < r2.x + r2.width &&
+           r1.x + r1.width > r2.x &&
+           r1.y < r2.y + r2.height &&
+           r1.y + r1.height > r2.y;
+}
+                </code></pre>
+
+                <h2>Ses Ekleme</h2>
+                <p>Java'da ses dosyalarını oynatmak için:</p>
+
+                <pre><code class="language-java">
+import javax.sound.sampled.*;
+
+public void playSound(String soundFile) {
+    try {
+        AudioInputStream audioIn = AudioSystem.getAudioInputStream(
+            getClass().getResource(soundFile));
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioIn);
+        clip.start();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+                </code></pre>
+
+                <h2>İyi Pratikler</h2>
+                <p>Oyun geliştirirken dikkat edilmesi gereken noktalar:</p>
+                <ul>
+                    <li>Kod organizasyonu ve temiz kod yazımı</li>
+                    <li>Performans optimizasyonu</li>
+                    <li>Bellek yönetimi</li>
+                    <li>Hata yakalama ve loglama</li>
+                    <li>Düzenli test ve debug</li>
+                </ul>
+
+                <h2>İleri Seviye Konular</h2>
+                <p>Daha karmaşık oyunlar için öğrenmeniz gereken konular:</p>
+                <ul>
+                    <li>Fizik motoru entegrasyonu</li>
+                    <li>Partikül sistemleri</li>
+                    <li>Shader programlama</li>
+                    <li>Multiplayer yapısı</li>
+                    <li>Save/Load sistemleri</li>
+                </ul>
+
+                <h2>Sonuç</h2>
+                <p>Java ile oyun geliştirme, hem eğlenceli hem de öğretici bir süreçtir. Temel programlama becerilerinizi geliştirken, yaratıcılığınızı da kullanabilirsiniz. Başlangıç için basit projelerle başlayıp, zamanla daha karmaşık oyunlara geçiş yapabilirsiniz.</p>
+            </div>
+
+            <div class="post-footer">
+                <div class="tags">
+                    <a href="#" class="tag">Java</a>
+                    <a href="#" class="tag">Oyun Geliştirme</a>
+                    <a href="#" class="tag">Programlama</a>
+                    <a href="#" class="tag">Game Dev</a>
+                    <a href="#" class="tag">2D Oyun</a>
+                </div>
+
+                <div class="share-buttons">
+                    <span>Paylaş:</span>
+                    <a href="#" class="share-btn"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="share-btn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="share-btn"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>

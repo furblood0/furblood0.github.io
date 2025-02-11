@@ -16,10 +16,10 @@
               <h1>Furkan Fidan</h1>
           </div>
           <ul class="nav-links">
-              <li><a href="#home">Ana Sayfa</a></li>
-              <li><a href="#about">Hakkımda</a></li>
-              <li><a href="#projects">Projeler</a></li>
-              <li><a href="#contact">İletişim</a></li>
+              <li><a href="../index.html">Ana Sayfa</a></li>
+              <li><a href="../index.html#about">Hakkımda</a></li>
+              <li><a href="../index.html#projects">Projeler</a></li>
+              <li><a href="../index.html#contact">İletişim</a></li>
           </ul>
       </nav>
   </header>
@@ -29,39 +29,89 @@
         <div class="container">
             <div class="blog-header">
                 <h1>Blog Yazıları</h1>
-                <div class="blog-filters">
-                    <div class="search-box">
-                        <input type="text" placeholder="Blog yazılarında ara...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <div class="category-filter">
-                        <select id="categorySelect">
-                            <option value="">Tüm Kategoriler</option>
-                            <option value="teknoloji">Teknoloji</option>
-                            <option value="tasarim">Tasarım</option>
-                            <option value="gelistirme">Geliştirme</option>
-                        </select>
-                    </div>
-                </div>
             </div>
 
             <div class="blog-grid">
-                <!-- Blog kartları (6 adet gösterilecek) -->
+                <!-- Blog Post 1 -->
                 <article class="blog-card">
-                    <!-- Blog kartı içeriği (ana sayfadaki gibi) -->
+                    <div class="blog-image">
+                        <img src="images/samsung_a55.jpg" alt="Samsung A55 İncelemesi">
+                        <div class="blog-category">Teknoloji</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-info">
+                            <span class="blog-date"><i class="far fa-calendar"></i> 12 Şubat 2025</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 5 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">Samsung A55 İncelemesi</h3>
+                        <p class="blog-excerpt">
+                            Samsung'un yeni orta segment telefonu A55'in detaylı incelemesi. Performans, kamera ve batarya testleri...
+                        </p>
+                        <a href="posts/samsung-a55-inceleme.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </article>
-                <!-- Diğer blog kartları -->
-            </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <span class="page-dots">...</span>
-                <button class="page-btn">10</button>
-                <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/web_gelistirme.png" alt="Web Geliştirme İpuçları">
+                        <div class="blog-category">Geliştirme</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-info">
+                            <span class="blog-date"><i class="far fa-calendar"></i> 12 Şubat 2025</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 7 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">2024'de Web Geliştirme İpuçları</h3>
+                        <p class="blog-excerpt">
+                            Modern web geliştirme teknikleri, en iyi uygulamalar ve başlangıç için öneriler...
+                        </p>
+                        <a href="posts/web-gelistirme-ipuclari.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/img1.png" alt="Java ile Oyun Geliştirme">
+                        <div class="blog-category">Geliştirme</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-info">
+                            <span class="blog-date"><i class="far fa-calendar"></i> 12 Şubat 2025</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 10 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">Java ile Oyun Geliştirme: Başlangıç Rehberi</h3>
+                        <p class="blog-excerpt">
+                            Java, güçlü ve çok yönlü bir programlama dili olarak oyun geliştirme için mükemmel bir seçenektir. Bu yazıda, Java ile oyun geliştirmeye başlamak isteyenler için temel kavramları, araçları ve adım adım bir örnek projeyi ele alacağız.                        </p>
+                        <a href="posts/java-ile-oyun-gelistirme.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="images/yazilim_trendleri.png" alt="2024 Teknoloji Trendleri">
+                        <div class="blog-category">Teknoloji</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-info">
+                            <span class="blog-date"><i class="far fa-calendar"></i> 12 Şubat 2025</span>
+                            <span class="blog-read-time"><i class="far fa-clock"></i> 10 dk okuma</span>
+                        </div>
+                        <h3 class="blog-title">2024'de Yazılım Trendleri</h3>
+                        <p class="blog-excerpt">
+                            Yazılım sektöründe en son gelişmeler, en iyi uygulamalar ve yazılım geliştirme için öneriler...
+                        </p>
+                        <a href="posts/yazilim-trendleri-2024.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+
+                <!-- Daha fazla blog kartı eklenebilir -->
+            </div>
+            <div class="loading-spinner" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
             </div>
         </div>
     </main>
