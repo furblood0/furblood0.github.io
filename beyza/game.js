@@ -242,7 +242,6 @@ function create() {
     hearts.create(4550, this.scale.height - 160, 'heart').setScale(0.1).refreshBody();
     hearts.create(4700, this.scale.height - 160, 'heart').setScale(0.1).refreshBody();
     hearts.create(4850, this.scale.height - 160, 'heart').setScale(0.1).refreshBody();
-    hearts.create(5000, this.scale.height - 160, 'heart').setScale(0.1).refreshBody();
 
 
     this.physics.add.overlap(player, hearts, collectHeart, null, this);
