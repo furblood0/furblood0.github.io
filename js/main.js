@@ -12,7 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Typing animation
     const typedTextSpan = document.querySelector(".typed-text");
-    const texts = ["Web Geliştirici", "Tasarımcı", "Freelancer"]; // İstediğiniz mesajları ekleyin
+    const texts = [
+        "Web Developer",
+        "Mobile App Developer",
+        "UI/UX Enthusiast",
+        "Network Explorer",
+        "Minimalist Designer",
+        "Freelancer",
+        "Continuous Learner",
+        "Creative Coder"
+    ];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
