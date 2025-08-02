@@ -1,0 +1,31 @@
+/* src/components/Footer/Footer.css */
+.footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 15px 20px; /* Üstten ve alttan boşluğu daha da azaltıyoruz */
+  font-size: 0.85rem; /* Genel yazı boyutunu küçültüyoruz */
+  border-top: 1px solid #333;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Metni ortaya hizala */
+  flex-shrink: 0; /* Sayfanın altına yapışmasını sağlar */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin: 0; /* Boşlukları kaldır */
+  padding: 0; /* Boşlukları kaldır */
+  color: #aaa;
+  font-size: 0.8rem; /* Telif hakkı yazısının boyutunu ayarla */
+}
+
+/* Duyarlı tasarım (Responsive Adjustments) */
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 15px; /* Daha küçük ekranlarda paddingi daha da azalt */
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem; /* Küçük ekranlarda telif hakkı boyutu */
+  }
+}

@@ -1,0 +1,90 @@
+/* src/index.css */
+/* Temel sıfırlama ve sayfa düzeni stilleri */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* HTML ve Body, viewport yüksekliğinin tamamını kaplar */
+  font-family: -apple-system, BlinkMacMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(28, 28, 28); /* Koyu bir arka plan rengi */
+  color: #ffffff; /* Beyaz metin rengi */
+  box-sizing: border-box; /* Padding ve border'ın genişliğe dahil olmasını sağlar */
+}
+
+/* Tüm bileşenlerin ve alt elemanların kutu modelini düzeltmek için */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+#root {
+  display: flex; /* Flexbox kullan */
+  flex-direction: column; /* Öğeleri dikey olarak sırala */
+  min-height: calc(100vh - 80px); /* Minimum yüksekliği viewport yüksekliği kadar yap, footer'ı alta iter */
+  width: 100%; /* Tam genişlik kapla */
+  margin: 0 auto; /* Ortalamak için */
+  padding: 0; /* Root'taki varsayılan padding'i kaldırıyoruz */
+  /* #root'taki max-width: 1280px ve padding: 2rem gibi ayarları buradan kaldırdık,
+     çünkü bunlar genel sayfa düzenini etkileyip footer'ın tam genişlikte olmasını engelleyebilir.
+     Sayfa içeriği için max-width'i her sayfada ayrı ayrı ayarlamak daha iyidir. */
+}
+
+main {
+  flex-grow: 1; /* Ana içerik, mümkün olduğunca fazla boş alan kaplar */
+  display: flex; /* İçerik sayfalarının ortalanması/düzenlenmesi için flexbox kullanırız */
+  flex-direction: column; /* İçerik sayfaları için dikey düzen */
+  width: 100%; /* Tam genişlik kaplar */
+  padding-top: 7px; /* İçerik sayfaları için iç boşluk */
+}
+
+/* Global bağlantı stili, isteğe bağlı */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+/* --- SCROLLBAR ÖZELLEŞTİRMESİ --- */
+
+/* Genel Scrollbar Arka Planı ve Boyutları */
+::-webkit-scrollbar {
+  width: 10px;   /* Genişliği biraz daha azaltalım, daha zarif durur */
+  height: 10px;  /* Yatay scrollbar yüksekliği */
+  background-color: #242424; /* Sayfanızın genel arka plan rengiyle aynı yapıyorum */
+}
+
+/* Scrollbar Sürükleyici (Thumb) - Kaydırdığınız çubuk */
+::-webkit-scrollbar-thumb {
+  background-color: #4a4a4a; /* Koyu gri, sayfa arka planından çok az daha açık */
+  border-radius: 5px; /* Köşeleri yuvarla */
+  border: 2px solid #242424; /* Sürükleyicinin etrafındaki boşluk, arka plan rengiyle aynı */
+}
+
+/* Scrollbar Sürükleyici Üzerine Gelindiğinde (Hover Etkisi) */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6a6a6a; /* Üzerine gelince hafifçe daha açık gri */
+}
+
+/* Scrollbar Parçası (Track) - Sürükleyicinin hareket ettiği yol */
+::-webkit-scrollbar-track {
+  background-color: #242424; /* Track'in arka plan rengi, scrollbar arka planıyla aynı */
+  border-radius: 10px; /* Track'in köşelerini yuvarla */
+}
+
+/* Köşe Alanı (Hem dikey hem yatay scrollbar'ın kesiştiği köşe) */
+::-webkit-scrollbar-corner {
+  background-color: #242424; /* Köşe rengi */
+}
+
+/* Scrollbar Düğmeleri (Üst ve alt oklar) - Gizli kalsın */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* --- SCROLLBAR ÖZELLEŞTİRMESİ SONU --- */

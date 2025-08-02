@@ -1,0 +1,520 @@
+/* src/pages/AboutPage/AboutPage.css */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0 2rem 0;  
+  min-height: calc(100vh - 80px); /* Navbar yüksekliği kadar boşluk bırak */
+  background-color: #2e2e2e; /* Daha açık bir arka plan */
+}
+
+.about-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: left;
+  color: #e0e0e0;
+}
+
+.about-content h1 {
+  font-size: 2.8rem;
+  color: #007bff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  color: #eee;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-item {
+  display: flex; /* İkon ve metni yan yana hizalamak için */
+  flex-direction: column; /* İkon üstte, metin altta */
+  align-items: center; /* Ortala */
+  justify-content: center; /* Ortala */
+  gap: 5px; /* İkon ile metin arasına boşluk */
+  background-color: #007bff; /* Mavi arka plan */
+  color: white;
+  padding: 15px 10px; /* Dikey paddingi artır, yatayı azalt */
+  border-radius: 8px; /* Daha yuvarlak köşeler */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+.skill-item:hover {
+  background-color: #0056b3;
+  transform: translateY(-5px); /* Hover'da daha belirgin yükselme */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Hover'da daha belirgin gölge */
+}
+
+/* src/pages/AboutPage/AboutPage.css */
+
+.skill-icon {
+  /* React Icons için font-size işe yarar. */
+  font-size: 2.5rem;
+
+  /* Özel SVG'ler için, bileşenin 'size' prop'unu kullanmak daha kontrollü bir yaklaşımdır.
+     Ancak, eğer CSS ile boyutlandırmak isterseniz, bu div'in içindeki SVG'yi hedefleyebilirsiniz: */
+  display: flex; /* İkonu ve metni hizalamak için flexbox kullanıyorsanız */
+  align-items: center; /* İkonu dikeyde ortalamak için */
+  justify-content: center; /* İkonu yatayda ortalamak için */
+  height: 2.5rem; /* İkonun kapsayıcısına sabit bir yükseklik verin */
+  width: 2.5rem;  /* İkonun kapsayıcısına sabit bir genişlik verin */
+}
+
+.skill-icon svg {
+  /* .skill-icon içindeki tüm SVG'leri hedefleyin */
+  max-width: 100%;
+  max-height: 100%;
+  font-size: 4rem;
+  height: 4rem; /* İkonun kapsayıcısına sabit bir yükseklik verin */
+  width: 4rem;  /* İkonun kapsayıcısına sabit bir genişlik verin */
+  /* Eğer ikonun rengi sabitse (gradyanlar gibi) bu satırı silebilirsiniz.
+     Eğer tek bir renkse ve MsSqlIcon'a color prop'u eklediyseniz, bunu kullanın: */
+  /* color: inherit; */
+}
+.education-item {
+  background-color: #3b3b3b;
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.education-item p {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Genel giriş animasyonu - Homepage'deki fadeInSlideUp'ı kullanabiliriz */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bölümlere animasyon uygulama */
+.about-content h1,
+.about-content p,
+.about-content h2,
+.skills-grid,
+.education-item,
+.timeline-item {
+  opacity: 0; /* Başlangıçta gizle */
+  transform: translateY(20px); /* Hafifçe alttan gelme efekti */
+  animation: fadeInSlideUp 0.8s forwards ease-out; /* Animasyonu uygula */
+}
+
+/* Her öğeye farklı bir gecikme ekleyerek sıralı giriş efekti */
+.about-content p:nth-child(2) { animation-delay: 0.2s; }
+.about-content p:nth-child(3) { animation-delay: 0.4s; }
+.about-content p:nth-child(4) { animation-delay: 0.6s; } /* 3. paragraf */
+.about-content h2:nth-of-type(1) { animation-delay: 0.8s; } /* Yetenekler başlığı */
+.skills-grid { animation-delay: 1s; }
+.skill-item { animation-delay: var(--animation-delay); } /* Her skill-item için ayrı delay */
+.about-content h2:nth-of-type(2) { animation-delay: 1.2s; } /* Deneyim başlığı */
+.timeline-item:nth-child(1) { animation-delay: 1.4s; } /* İlk deneyim */
+.timeline-item:nth-child(2) { animation-delay: 1.6s; } /* İkinci deneyim */
+.about-content h2:nth-of-type(3) { animation-delay: 1.8s; } /* Eğitim başlığı */
+.education-timeline .timeline-item:nth-child(1) { animation-delay: 2.0s; } /* İlk eğitim */
+.education-timeline .timeline-item:nth-child(2) { animation-delay: 2.2s; } /* İkinci eğitim */
+
+
+/* Zaman Çizelgesi (Timeline) */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto; /* Üstten/alttan boşluk */
+}
+
+/* Çizginin kendisi */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #007bff; /* Vurgu renginiz */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  z-index: 0;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Nokta */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  border: 3px solid #2e2e2e;
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover::after {
+  transform: scale(1.3);
+  box-shadow: 0 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Sol ve Sağdaki Öğeler */
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+  padding-right: 60px; /* Çizgiye uzaklık */
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+  padding-left: 60px; /* Çizgiye uzaklık */
+}
+
+/* Noktaları Hizalama */
+.timeline-item:nth-child(odd)::after {
+  right: -10px; /* 20px genişlik / 2 = 10px */
+}
+
+.timeline-item:nth-child(even)::after {
+  left: -10px; /* 20px genişlik / 2 = 10px */
+}
+
+.timeline-content {
+  background: linear-gradient(135deg, #3b3b3b 0%, #2a2a2a 100%);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  border-left: 4px solid #007bff;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.timeline-content:hover::before {
+  transform: scaleX(1);
+}
+
+.timeline-content h3 {
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+/* Pozisyon ve dönem için özel stil */
+.position-period {
+  color: #007bff !important;
+  font-weight: 600;
+  font-size: 1rem !important;
+  margin-bottom: 8px !important;
+}
+
+/* Açıklama için stil */
+.description {
+  color: #e0e0e0 !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 12px !important;
+}
+
+/* Teknoloji etiketleri için stiller */
+.technologies {
+  margin-top: 15px;
+}
+
+.tech-label {
+  display: block;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  background-color: #007bff;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Eğitim Timeline için özel stiller */
+.education-timeline .timeline-content {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-left: 4px solid #28a745; /* Yeşil vurgu eğitim için */
+}
+
+.education-timeline .timeline-content::before {
+  background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.education-timeline .timeline-item::after {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  border: 3px solid #2e2e2e;
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.2);
+}
+
+.education-timeline .timeline-item:hover::after {
+  box-shadow: 0 0 0 6px rgba(40, 167, 69, 0.3);
+}
+
+/* Eğitim içeriği için özel stiller */
+.degree-period {
+  color: #28a745 !important;
+  font-weight: 600;
+  font-size: 1rem !important;
+  margin-bottom: 8px !important;
+}
+
+.education-period {
+  color: #007bff !important;
+  font-weight: 500;
+  font-size: 0.9rem !important;
+  margin-bottom: 10px !important;
+}
+
+.education-description {
+  color: #e0e0e0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Akademik puanlar için stiller */
+.academic-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  padding: 6px 12px;
+  background: rgba(40, 167, 69, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid #28a745;
+}
+
+.score-label {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.score-value {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: white;
+}
+
+.score-value.gpa {
+  background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.score-value.graduation-score {
+  background: linear-gradient(135deg, #fd7e14, #ff8c42);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.cv-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-btn {
+  font-size: 1.1rem;
+  padding: 18px 35px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+}
+
+.cv-note {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-section h3 {
+  color: #eee;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.social-links {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 2.5rem;
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 15px;
+  transition: color 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: #0056b3;
+  transform: translateY(-3px);
+  background: rgba(0, 123, 255, 0.2);
+}
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* Mobil için Duyarlı Tasarım */
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px; /* Mobil görünümde sol kenara hizala */
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px; /* Mobil görünümde sadece soldan boşluk */
+    padding-right: 20px;
+    text-align: left; /* Mobil görünümde tüm metinleri sola hizala */
+  }
+  .timeline-item::after {
+    left: 10px; /* 20px çizgi pozisyonu - 10px nokta yarıçapı = 10px */
+  }
+  .timeline-item:nth-child(odd) {
+    left: 0; /* Mobil görünümde tüm öğeleri sola hizala */
+  }
+  .timeline-item:nth-child(even) {
+    left: 0; /* Mobil görünümde tüm öğeleri sola hizala */
+  }
+  
+  /* Mobil cihazlarda da sosyal medya ikonları yan yana kalsın */
+  .social-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px; /* Mobilde biraz daha az boşluk */
+  }
+}

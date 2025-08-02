@@ -1,0 +1,271 @@
+/* src/pages/HomePage/HomePage.css */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 80px - 50px);
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.hero-section {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #1c1c1c;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1s forwards ease-out;
+  animation-delay: 0.5s;
+}
+
+/* Hero içeriği için flex container (fotoğraf ve metin) */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1280px;
+  flex-wrap: wrap;
+}
+
+.profile-picture {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #007bff;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.7);
+  animation: fadeInZoom 1.5s forwards ease-out;
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-text-content {
+  flex: 1;
+  max-width: 600px; /* Metin genişliğini sınırla */
+  text-align: left; /* Metni sola hizala */
+  display: flex; /* İçindeki öğeleri (başlık, alt başlık, açıklama, butonlar) dikeyde sıralamak için */
+  flex-direction: column; /* İçindeki öğeleri dikeyde sırala */
+  align-items: flex-start; /* İçindeki öğeleri sola hizala */
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.6), 0 0 15px rgba(0, 123, 255, 0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1.2s forwards ease-out;
+  animation-delay: 1s;
+}
+
+.hero-title-line1,
+.hero-title-line2 {
+  display: block;
+  margin-bottom: 0;
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.hero-title-line2 {
+  margin-top: -10px;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: #eee;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-weight: normal;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1.4s forwards ease-out;
+  animation-delay: 1.5s;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #bbb;
+  max-width: 550px;
+  margin-bottom: 35px; /* Butonlardan önce boşluk */
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1.6s forwards ease-out;
+  animation-delay: 2s;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 0; /* hero-description'daki margin-bottom yeterli */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1.8s forwards ease-out;
+  animation-delay: 2.5s;
+  /* Yeni stiller: hero-text-content içinde ortalamak için */
+  width: 100%; /* İçinde bulunduğu parent'ın (hero-text-content) genişliğini al */
+}
+
+/* Ortak buton stili */
+.btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+/* Tüm butonlar başlangıçta aynı renk olacak */
+.btn-primary,
+.btn-secondary {
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+/* Hover durumları */
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+
+/* Ortak giriş animasyonu */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Duyarlı Tasarım */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 30px;
+  }
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+  }
+  .hero-text-content {
+    max-width: 100%; /* Tabletlerde tam genişlik kullanabilir */
+    align-items: center; /* Tabletlerde metni ve butonları ortaya al */
+  }
+  .hero-title,
+  .hero-title-line1,
+  .hero-title-line2 {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  .hero-buttons {
+      max-width: 100%; /* Tabletlerde tam genişlik kullanabilir */
+      justify-content: center; /* Tabletlerde butonları kendi içinde ortala */
+  }
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center; /* Fotoğraf ve metni ortala */
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .profile-picture {
+    width: 160px;
+    height: 160px;
+  }
+  .hero-text-content {
+    text-align: center; /* Mobil metni ortala */
+    align-items: center; /* Mobil cihazlarda metni ve butonları ortaya al */
+  }
+  .hero-title,
+  .hero-title-line1,
+  .hero-title-line2 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 80%; /* Mobil cihazlarda daha dar */
+    max-width: unset; /* Mobil cihazda max-width'i sıfırla */
+    justify-content: center; /* Mobil cihazlarda butonları kendi içinde ortala */
+  }
+  .btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+  .hero-title,
+  .hero-title-line1,
+  .hero-title-line2 {
+    font-size: 1.6rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-description {
+    font-size: 0.8rem;
+  }
+}

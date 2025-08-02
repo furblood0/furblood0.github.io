@@ -1,0 +1,93 @@
+/* src/components/Navbar/Navbar.css - Web Sürümü Odaklı */
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Sol ve sağ taraftaki öğeleri aralarında boşluk bırakarak yayar */
+  align-items: center; /* Öğeleri dikeyde ortalar */
+  padding: 15px 30px; /* İç boşluk */
+  background-color: #333; /* Arka plan rengi */
+  color: white; /* Metin rengi */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+  position: fixed; /* SAYFANIN TEPESİNDE SABİT KALMASINI SAĞLAR */
+  width: 100%; /* Tüm genişliği kaplar */
+  top: 0; /* Sayfanın en üstüne hizala */
+  left: 0; /* Sayfanın en soluna hizala */
+  z-index: 1000; /* Diğer içeriklerin üzerinde olmasını sağlar */
+  box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+}
+
+/* Sol taraftaki "Furkan Fidan" yazısı için stil */
+.navbar-brand {
+  color: #007bff; /* Mavi renk */
+  text-decoration: none; /* Varsayılan alt çizgiyi kaldırır */
+  font-size: 1.8rem; /* Boyut */
+  font-weight: bold; /* Kalın font */
+  transition: color 0.3s ease; /* Renk geçiş efekti */
+}
+
+.navbar-brand:hover {
+  color: #0056b3; /* Üzerine gelince daha koyu mavi */
+}
+
+/* Navigasyon linkleri listesi */
+.nav-links {
+  display: flex; /* Linkleri yatayda sırala */
+  list-style: none; /* Liste işaretlerini kaldır */
+  margin: 0; /* Varsayılan marginleri sıfırla */
+  padding: 0; /* Varsayılan paddingleri sıfırla */
+  gap: 20px; /* Linkler arası boşluk */
+}
+
+.nav-links li {
+  margin: 0; /* Liste öğelerinin varsayılan marginlerini sıfırla */
+}
+
+/* Navlink stilleri (Her bir a etiketi) */
+.nav-links a {
+  color: white; /* Varsayılan link rengi */
+  text-decoration: none; /* BURASI ÇOK ÖNEMLİ: Tüm varsayılan alt çizgileri kaldırır */
+  padding: 5px 0; /* İç boşluk */
+  position: relative; /* Alt çizgi animasyonu için konumlandırma */
+  transition: color 0.3s ease; /* Renk geçiş efekti */
+  font-weight: 500; /* Font kalınlığı */
+}
+
+/* Aktif linkin stili */
+.nav-links a.active {
+  color: #007bff; /* Aktif link rengi */
+  font-weight: bold; /* Aktifken daha kalın font */
+}
+
+/* Linkin altındaki mavi çizgi efekti (başlangıçta gizli) */
+.nav-links a::after {
+  content: ''; /* Çizgiyi oluşturmak için boş içerik */
+  position: absolute;
+  width: 0; /* Başlangıçta genişlik 0, yani görünmez */
+  height: 2px; /* Çizginin yüksekliği */
+  bottom: 0; /* Linkin altına hizala */
+  left: 0; /* Soldan başla */
+  background-color: #007bff; /* Çizginin rengi */
+  transition: width 0.3s ease; /* Genişlik değişimine animasyon ekle */
+}
+
+/* Linkin üzerine gelindiğinde mavi çizgi efekti */
+.nav-links a:hover::after {
+  width: 100%; /* Üzerine gelince mavi çizgi oluşsun */
+}
+
+/* Aktif linkte mavi çizgi efekti */
+.nav-links a.active::after {
+  width: 100%; /* Aktifken mavi çizgi oluşsun */
+}
+
+/* Mobil menü butonu (masaüstü için gizli) */
+.menu-toggle {
+  display: none; /* Masaüstünde bu butonu gizle */
+}
+
+/* Bu kuralı App.css veya index.css gibi bir dosyaya eklemeniz önemlidir. */
+/* Çünkü navbar fixed olduğu için sayfa içeriği navbar'ın altında kalacaktır. */
+/* body {
+    padding-top: 70px; // Navbar yüksekliğine göre ayarlanmalı
+    margin: 0;
+} */
