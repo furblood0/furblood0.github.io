@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
               Bir Bilgisayar Mühendisi Adayı ve Web Geliştiricisiyim.
             </p>
             <p className="hero-description">
-              Yaratıcı ve işlevsel web deneyimleri tasarlamayı ve geliştirmeyi seviyorum. Projelerimi ve ilgi alanlarımı keşfetmek için aşağı kaydırın veya menüyü kullanın.
+              Yaratıcı ve işlevsel web deneyimleri tasarlamayı ve geliştirmeyi seviyorum. Projelerimi ve ilgi alanlarımı keşfetmek için menüyü kullanabilir veya aşağıdaki butonlara tıklayabilirsiniz.
             </p>
             {/* Butonları hero-text-content içine taşıdık */}
             <div className="hero-buttons">
