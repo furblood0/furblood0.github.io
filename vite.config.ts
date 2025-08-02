@@ -11,8 +11,16 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: true,
-    open: true
+    host: 'localhost',
+    strictPort: true,
+    hmr: {
+      port: 5173
+    }
   },
-  publicDir: 'public'
+  optimizeDeps: {
+    include: ['react', 'react-dom']
+  },
+  resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+  }
 })
