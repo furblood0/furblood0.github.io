@@ -82,7 +82,7 @@ Bu proje GitHub Pages ile otomatik olarak deploy edilir. Her `main` branch'e pus
 
 ## 🔗 Canlı Demo
 
-🌐 **GitHub Pages**: https://furblood0.github.io/mySite/
+🌐 **GitHub Pages**: https://furblood0.github.io/
 
 ## 📧 İletişim
 
