@@ -152,7 +152,7 @@ const AboutPage: React.FC = () => {
         <h2 style={{ animationDelay: '2s' }}>İletişim & Daha Fazlası</h2>
         <div className="contact-buttons" style={{ animationDelay: '2.2s' }}>
           <div className="cv-section">
-            <a href={`${import.meta.env.BASE_URL}assets/Furkan_Fidan_CV.pdf`} download className="btn btn-primary cv-btn">
+            <a href={`${import.meta.env.BASE_URL}assets/cv.pdf`} download className="btn btn-primary cv-btn">
               📄 CV'mi İndir
             </a>
             <p className="cv-note">PDF formatında güncel CV'mi indirebilirsiniz</p>
