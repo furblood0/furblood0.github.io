@@ -37,7 +37,7 @@ const ContactPage: React.FC = () => {
         throw new Error(errorData.error || 'Mesaj gönderilemedi');
       }
 
-      const result = await response.json();
+      await response.json(); // Response'u okumak için gerekli
       alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
