@@ -35,7 +35,7 @@ const AdminPage: React.FC = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('http://localhost:3001/api/admin/login', {
+      const response = await fetch('https://furblood0-github-io.onrender.com/api/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const AdminPage: React.FC = () => {
   const fetchMessages = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3001/api/messages');
+      const response = await fetch('https://furblood0-github-io.onrender.com/api/messages');
       
       if (!response.ok) {
         throw new Error('Mesajlar getirilemedi');
@@ -93,7 +93,7 @@ const AdminPage: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3001/api/messages/${id}`, {
+      const response = await fetch(`https://furblood0-github-io.onrender.com/api/messages/${id}`, {
         method: 'DELETE',
       });
 

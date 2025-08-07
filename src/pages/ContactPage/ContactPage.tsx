@@ -24,7 +24,7 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch('https://furblood0-github-io.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

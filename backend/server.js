@@ -48,8 +48,8 @@ function createTable() {
   });
 }
 
-// Admin şifresi (gerçek uygulamada environment variable kullanılmalı)
-const ADMIN_PASSWORD = 'admin1642';
+// Admin şifresi (environment variable'dan oku)
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin1642';
 
 // Admin authentication endpoint'i
 app.post('/api/admin/login', (req, res) => {
