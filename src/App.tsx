@@ -9,6 +9,7 @@ import ProjectsPage from './pages/ProjectsPage/ProjectsPage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import BlogPostDetail from './pages/BlogPostDetail/BlogPostDetail';
 import ContactPage from './pages/ContactPage/ContactPage';
+import AdminPage from './pages/AdminPage/AdminPage';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostDetail />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<h1>404 - Sayfa Bulunamadı</h1>} />
         </Routes>
       </main>

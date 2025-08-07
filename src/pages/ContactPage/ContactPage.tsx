@@ -23,12 +23,29 @@ const ContactPage: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simüle edilmiş API çağrısı
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Mesaj gönderilemedi');
+      }
+
+      const result = await response.json();
+      alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağım.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+    } catch (error) {
+      alert(error instanceof Error ? error.message : 'Bir hata oluştu');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
