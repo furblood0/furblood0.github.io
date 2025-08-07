@@ -9,6 +9,7 @@
 .projects-header {
   text-align: center;
   margin-bottom: 40px;
+  padding: 0 20px;
 }
 
 .projects-header h1 {
@@ -33,6 +34,7 @@
   margin-left: auto;
   margin-right: auto;
   align-items: center;
+  padding: 0 20px;
 }
 
 .search-container {
@@ -94,6 +96,7 @@
   margin-bottom: 30px;
   color: #888;
   font-size: 0.9rem;
+  padding: 0 20px;
 }
 
 .projects-grid {
@@ -104,6 +107,7 @@
   margin: 0 auto;
   align-items: start;
   justify-content: center;
+  padding: 0 20px;
 }
 
 .project-card {
@@ -353,9 +357,50 @@
 }
 
 /* Responsive Tasarım */
+@media (max-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
+    gap: 25px;
+    padding: 0 15px;
+  }
+  
+  .projects-filters {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .projects-page {
+    padding: 3rem 0 2rem 0;
+  }
+  
+  .projects-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+    gap: 20px;
+  }
+  
+  .project-info {
+    padding: 20px;
+  }
+  
+  .project-info h2 {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .projects-page {
-    padding: 20px 15px;
+    padding: 4rem 0 1.5rem 0;
+  }
+  
+  .projects-header {
+    margin-bottom: 30px;
+    padding: 0 15px;
+    margin-top: 20px;
   }
   
   .projects-header h1 {
@@ -367,50 +412,49 @@
   }
   
   .projects-filters {
-    gap: 15px;
+    gap: 20px;
+    padding: 0 35px;
+  }
+  
+  .search-container {
+    max-width: 250px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .search-input {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    width: 100%;
   }
   
   .filter-controls {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
   }
   
   .category-filter,
   .sort-filter {
-    width: 100%;
-    max-width: 300px;
+    width: auto;
+    max-width: 140px;
+    min-width: 140px;
   }
   
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
+    padding: 0 20px;
+    max-width: 400px;
+    margin: 0 auto;
   }
   
   .project-card {
-    margin: 0 10px;
-  }
-  
-  .project-info {
-    padding: 20px;
-  }
-  
-  .project-info h2 {
-    font-size: 1.4rem;
-  }
-  
-  .project-links {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .project-link {
-    padding: 10px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .projects-header h1 {
-    font-size: 1.8rem;
+    max-width: 100%;
+    margin: 0;
   }
   
   .project-info {
@@ -421,8 +465,233 @@
     font-size: 1.3rem;
   }
   
-  .tech-tag {
-    font-size: 0.75rem;
+  .project-info p {
+    font-size: 0.9rem;
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .project-link {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .featured-badge {
+    top: 8px;
+    right: 8px;
     padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+  
+  .project-category {
+    bottom: 6px;
+    left: 6px;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-page {
+    padding: 3.5rem 0 1rem 0;
+  }
+  
+  .projects-header {
+    margin-bottom: 25px;
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+  
+  .projects-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .projects-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .projects-filters {
+    padding: 0 30px;
+    gap: 18px;
+  }
+  
+  .search-container {
+    max-width: 220px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .search-input {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  .filter-controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .category-filter,
+  .sort-filter {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    max-width: 130px;
+    min-width: 130px;
+  }
+  
+  .projects-grid {
+    padding: 0 15px;
+    gap: 20px;
+    max-width: 350px;
+  }
+  
+  .project-card {
+    margin: 0;
+  }
+  
+  .project-info {
+    padding: 12px;
+  }
+  
+  .project-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  
+  .project-info p {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+  }
+  
+  .tech-tag {
+    font-size: 0.7rem;
+    padding: 2px 6px;
+  }
+  
+  .project-links {
+    gap: 6px;
+  }
+  
+  .project-link {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .featured-badge {
+    top: 6px;
+    right: 6px;
+    padding: 2px 6px;
+    font-size: 0.65rem;
+  }
+  
+  .project-category {
+    bottom: 4px;
+    left: 4px;
+    padding: 1px 4px;
+    font-size: 0.65rem;
+  }
+  
+  .no-results {
+    padding: 40px 15px;
+  }
+  
+  .no-results h3 {
+    font-size: 1.3rem;
+  }
+  
+  .no-results p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .projects-page {
+    padding: 3rem 0 1rem 0;
+  }
+  
+  .projects-header {
+    margin-top: 10px;
+  }
+  
+  .projects-header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .projects-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .projects-filters {
+    gap: 15px;
+    padding: 0 25px;
+  }
+  
+  .search-container {
+    max-width: 200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .search-input {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .filter-controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .category-filter,
+  .sort-filter {
+    padding: 7px 10px;
+    font-size: 0.8rem;
+    max-width: 120px;
+    min-width: 120px;
+  }
+  
+  .projects-grid {
+    padding: 0 12px;
+    gap: 18px;
+    max-width: 320px;
+  }
+  
+  .project-card {
+    margin: 0;
+  }
+  
+  .project-info {
+    padding: 10px;
+  }
+  
+  .project-info h2 {
+    font-size: 1.1rem;
+  }
+  
+  .project-info p {
+    font-size: 0.8rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 1px 4px;
+  }
+  
+  .project-link {
+    padding: 6px 8px;
+    font-size: 0.75rem;
   }
 }

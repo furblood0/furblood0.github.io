@@ -1,88 +1,190 @@
-/* src/components/Navbar/Navbar.css - Web Sürümü Odaklı */
+/* src/components/Navbar/Navbar.css - Responsive Tasarım */
 
 .navbar {
   display: flex;
-  justify-content: space-between; /* Sol ve sağ taraftaki öğeleri aralarında boşluk bırakarak yayar */
-  align-items: center; /* Öğeleri dikeyde ortalar */
-  padding: 15px 30px; /* İç boşluk */
-  background-color: #333; /* Arka plan rengi */
-  color: white; /* Metin rengi */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Hafif gölge */
-  position: fixed; /* SAYFANIN TEPESİNDE SABİT KALMASINI SAĞLAR */
-  width: 100%; /* Tüm genişliği kaplar */
-  top: 0; /* Sayfanın en üstüne hizala */
-  left: 0; /* Sayfanın en soluna hizala */
-  z-index: 1000; /* Diğer içeriklerin üzerinde olmasını sağlar */
-  box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #333;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 /* Sol taraftaki "Furkan Fidan" yazısı için stil */
 .navbar-brand {
-  color: #007bff; /* Mavi renk */
-  text-decoration: none; /* Varsayılan alt çizgiyi kaldırır */
-  font-size: 1.8rem; /* Boyut */
-  font-weight: bold; /* Kalın font */
-  transition: color 0.3s ease; /* Renk geçiş efekti */
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-  color: #0056b3; /* Üzerine gelince daha koyu mavi */
+  color: #0056b3;
 }
 
 /* Navigasyon linkleri listesi */
 .nav-links {
-  display: flex; /* Linkleri yatayda sırala */
-  list-style: none; /* Liste işaretlerini kaldır */
-  margin: 0; /* Varsayılan marginleri sıfırla */
-  padding: 0; /* Varsayılan paddingleri sıfırla */
-  gap: 20px; /* Linkler arası boşluk */
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
 }
 
 .nav-links li {
-  margin: 0; /* Liste öğelerinin varsayılan marginlerini sıfırla */
+  margin: 0;
 }
 
 /* Navlink stilleri (Her bir a etiketi) */
 .nav-links a {
-  color: white; /* Varsayılan link rengi */
-  text-decoration: none; /* BURASI ÇOK ÖNEMLİ: Tüm varsayılan alt çizgileri kaldırır */
-  padding: 5px 0; /* İç boşluk */
-  position: relative; /* Alt çizgi animasyonu için konumlandırma */
-  transition: color 0.3s ease; /* Renk geçiş efekti */
-  font-weight: 500; /* Font kalınlığı */
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 /* Aktif linkin stili */
 .nav-links a.active {
-  color: #007bff; /* Aktif link rengi */
-  font-weight: bold; /* Aktifken daha kalın font */
+  color: #007bff;
+  font-weight: bold;
 }
 
 /* Linkin altındaki mavi çizgi efekti (başlangıçta gizli) */
 .nav-links a::after {
-  content: ''; /* Çizgiyi oluşturmak için boş içerik */
+  content: '';
   position: absolute;
-  width: 0; /* Başlangıçta genişlik 0, yani görünmez */
-  height: 2px; /* Çizginin yüksekliği */
-  bottom: 0; /* Linkin altına hizala */
-  left: 0; /* Soldan başla */
-  background-color: #007bff; /* Çizginin rengi */
-  transition: width 0.3s ease; /* Genişlik değişimine animasyon ekle */
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
 }
 
 /* Linkin üzerine gelindiğinde mavi çizgi efekti */
 .nav-links a:hover::after {
-  width: 100%; /* Üzerine gelince mavi çizgi oluşsun */
+  width: 100%;
 }
 
 /* Aktif linkte mavi çizgi efekti */
 .nav-links a.active::after {
-  width: 100%; /* Aktifken mavi çizgi oluşsun */
+  width: 100%;
 }
 
-/* Mobil menü butonu (masaüstü için gizli) */
+/* Hamburger menü butonu (masaüstü için gizli) */
 .menu-toggle {
-  display: none; /* Masaüstünde bu butonu gizle */
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.menu-toggle i {
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover i {
+  color: #007bff;
+}
+
+/* Responsive tasarım - Tablet ve mobil cihazlar için */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  /* Hamburger menü butonunu göster */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Navigasyon linklerini mobilde gizle */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 30px 30px 30px;
+    gap: 0;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobil menü aktif olduğunda */
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #555;
+  }
+
+  .nav-links a::after {
+    display: none; /* Mobilde alt çizgi efektini kaldır */
+  }
+
+  .nav-links a:hover {
+    color: #007bff;
+  }
+}
+
+/* Küçük mobil cihazlar için */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    right: -100%;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
 }
 
 /* Bu kuralı App.css veya index.css gibi bir dosyaya eklemeniz önemlidir. */

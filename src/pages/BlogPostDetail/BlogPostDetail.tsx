@@ -28,13 +28,6 @@ const BlogPostDetail: React.FC = () => {
   return (
     <section className="blog-detail-page">
       <div className="blog-detail-container">
-        {/* Header */}
-        <div className="blog-detail-header">
-          <Link to="/blog" className="back-link">
-            ← Blog'a Dön
-          </Link>
-        </div>
-
         {/* Main Content */}
         <article className="blog-detail-content">
           <header className="blog-detail-title-section">

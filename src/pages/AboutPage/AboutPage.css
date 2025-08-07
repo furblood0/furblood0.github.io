@@ -35,6 +35,9 @@
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
+  max-width: 800px; /* Açıklama yazılarının genişliğini sınırla */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skills-grid {
@@ -456,17 +459,17 @@
   width: 60px;
   height: 60px;
   font-size: 2.5rem;
-  color: #007bff;
-  background: rgba(0, 123, 255, 0.1);
+  color: #ccc;
+  background: #333;
   border-radius: 15px;
   transition: color 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
   text-decoration: none;
 }
 
 .social-icon:hover {
-  color: #0056b3;
+  color: #fff;
   transform: translateY(-3px);
-  background: rgba(0, 123, 255, 0.2);
+  background: #444;
 }
 
 .btn {
@@ -492,29 +495,391 @@
 
 /* Mobil için Duyarlı Tasarım */
 @media (max-width: 768px) {
-  .timeline::after {
-    left: 20px; /* Mobil görünümde sol kenara hizala */
+  .about-page {
+    padding: 6rem 1rem 1rem 1rem; /* Üstten daha fazla padding */
   }
+
+  .about-content {
+    max-width: 100%;
+    padding: 0 10px;
+    text-align: center; /* Mobilde tüm içeriği ortala */
+  }
+
+  .about-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    margin-top: 0; /* Margin'i sıfırla */
+  }
+
+  .about-content h2 {
+    font-size: 1.6rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    max-width: 90%; /* Mobilde daha dar genişlik */
+    text-align: center; /* Mobilde paragrafları ortala */
+  }
+
+  /* Skills Grid Mobil */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px; /* Gap'i artır */
+    margin-top: 20px; /* Üstten biraz daha boşluk */
+    padding: 0 10px; /* Yanlardan padding */
+  }
+
+  .skill-item {
+    padding: 15px 10px; /* Padding'i artır */
+    font-size: 0.9rem;
+    min-height: 80px; /* Minimum yükseklik ekle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem; /* İkon boyutunu artır */
+    height: 2.2rem;
+    width: 2.2rem;
+    margin-bottom: 8px; /* İkon ile metin arası boşluk */
+  }
+
+  .skill-icon svg {
+    font-size: 3.2rem; /* SVG boyutunu artır */
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  /* Timeline Mobil */
+  .timeline::after {
+    left: 25px; /* Çizgiyi biraz daha sağa al */
+  }
+
   .timeline-item {
     width: 100%;
-    padding-left: 60px; /* Mobil görünümde sadece soldan boşluk */
-    padding-right: 20px;
-    text-align: left; /* Mobil görünümde tüm metinleri sola hizala */
+    padding-left: 70px; /* Çizgiye daha fazla mesafe */
+    padding-right: 25px; /* Sağdan daha fazla boşluk */
+    text-align: left;
+    margin-bottom: 25px; /* Öğeler arası boşluk */
   }
+
   .timeline-item::after {
-    left: 10px; /* 20px çizgi pozisyonu - 10px nokta yarıçapı = 10px */
+    left: 15px; /* Noktayı çizgiye göre ayarla */
   }
-  .timeline-item:nth-child(odd) {
-    left: 0; /* Mobil görünümde tüm öğeleri sola hizala */
-  }
+
+  .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
-    left: 0; /* Mobil görünümde tüm öğeleri sola hizala */
+    left: 0;
   }
-  
-  /* Mobil cihazlarda da sosyal medya ikonları yan yana kalsın */
+
+  /* Mobilde odd/even nokta pozisyonlarını override et */
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: 15px !important; /* Tüm noktalar aynı pozisyonda */
+  }
+
+  .timeline-content {
+    padding: 20px;
+    border-radius: 10px; /* Daha yuvarlak köşeler */
+    text-align: center; /* Mobilde başlıkları ortala */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.3rem; /* Başlık boyutunu artır */
+    margin-bottom: 8px;
+    text-align: center; /* Başlığı ortala */
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem; /* Metin boyutunu artır */
+    line-height: 1.5;
+  }
+
+  /* Contact Buttons Mobil */
+  .contact-buttons {
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .cv-btn {
+    font-size: 1rem;
+    padding: 15px 25px;
+  }
+
   .social-links {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 15px; /* Mobilde biraz daha az boşluk */
+    gap: 15px;
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page {
+    padding: 5rem 0.5rem 0.5rem 0.5rem; /* Küçük mobilde de üstten padding */
+  }
+
+  .about-content {
+    padding: 0 5px;
+    text-align: center;
+  }
+
+  .about-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    margin-top: 0; /* Margin'i sıfırla */
+  }
+
+  .about-content h2 {
+    font-size: 1.4rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    max-width: 95%; /* Küçük mobilde biraz daha geniş */
+    text-align: center;
+  }
+
+  /* Skills Grid Küçük Mobil */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* Sabit 3 sütun */
+    gap: 12px; /* Gap'i artır */
+    margin-top: 18px;
+    padding: 0 8px; /* Yanlardan padding */
+  }
+
+  .skill-item {
+    padding: 12px 8px; /* Padding'i artır */
+    font-size: 0.85rem; /* Font boyutunu biraz artır */
+    min-height: 70px; /* Minimum yükseklik */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-icon {
+    font-size: 2rem; /* İkon boyutunu artır */
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: 6px; /* İkon ile metin arası boşluk */
+  }
+
+  .skill-icon svg {
+    font-size: 2.8rem; /* SVG boyutunu artır */
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  /* Timeline Küçük Mobil */
+  .timeline::after {
+    left: 20px; /* Çizgiyi küçük mobilde biraz daha sola al */
+  }
+
+  .timeline-item {
+    padding-left: 60px; /* Biraz daha az padding */
+    padding-right: 20px; /* Sağdan padding */
+    margin-bottom: 20px; /* Öğeler arası boşluk */
+  }
+
+  .timeline-item::after {
+    left: 10px; /* Noktayı çizgiye göre ayarla - 20px (çizgi) - 10px (nokta yarıçapı) = 10px */
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  /* Mobilde odd/even nokta pozisyonlarını override et */
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: 10px !important; /* Tüm noktalar aynı pozisyonda */
+  }
+
+  .timeline-content {
+    padding: 18px; /* Biraz daha az padding */
+    border-radius: 8px; /* Köşeleri biraz azalt */
+    text-align: center; /* Mobilde başlıkları ortala */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem; /* Başlık boyutu */
+    margin-bottom: 6px;
+    text-align: center; /* Başlığı ortala */
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem; /* Metin boyutu */
+    line-height: 1.4;
+  }
+
+  /* Tech Tags Küçük Mobil */
+  .tech-tags {
+    gap: 5px; /* Etiketler arası boşluk */
+    margin-top: 8px;
+  }
+
+  .tech-tag {
+    padding: 4px 10px; /* Etiket padding'i */
+    font-size: 0.75rem; /* Font boyutu */
+    border-radius: 10px; /* Köşeler */
+  }
+
+  /* Contact Buttons Küçük Mobil */
+  .contact-buttons {
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .cv-btn {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+
+  .social-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .social-links {
+    gap: 12px;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .about-page {
+    padding: 5rem 0.5rem 0.5rem 0.5rem; /* Çok küçük ekranlarda da üstten padding */
+  }
+
+  .about-content h1 {
+    font-size: 1.6rem;
+    margin-top: 0; /* Margin'i sıfırla */
+  }
+
+  .about-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-content p {
+    font-size: 0.9rem;
+    max-width: 100%; /* Çok küçük ekranlarda tam genişlik */
+    text-align: center;
+  }
+
+  /* Skills Grid Çok Küçük Mobil */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 sütun - daha büyük kartlar */
+    gap: 10px; /* Gap'i artır */
+    margin-top: 15px;
+    padding: 0 5px; /* Yanlardan padding */
+  }
+
+  .skill-item {
+    padding: 10px 6px; /* Padding'i artır */
+    font-size: 0.8rem; /* Font boyutunu biraz artır */
+    min-height: 65px; /* Minimum yükseklik */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-icon {
+    font-size: 1.8rem; /* İkon boyutunu artır */
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-bottom: 5px; /* İkon ile metin arası boşluk */
+  }
+
+  .skill-icon svg {
+    font-size: 2.4rem; /* SVG boyutunu artır */
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  /* Timeline Çok Küçük Mobil */
+  .timeline::after {
+    left: 18px; /* Çizgiyi çok küçük mobilde daha da sola al */
+  }
+
+  .timeline-item {
+    padding-left: 55px; /* Minimum padding */
+    padding-right: 15px; /* Sağdan minimum padding */
+    margin-bottom: 18px; /* Öğeler arası boşluk */
+  }
+
+  .timeline-item::after {
+    left: 8px !important; /* Noktayı çizgiye göre ayarla - 18px (çizgi) - 10px (nokta yarıçapı) = 8px */
+  }
+
+  /* Mobilde odd/even nokta pozisyonlarını override et */
+  .timeline-item:nth-child(odd)::after,
+  .timeline-item:nth-child(even)::after {
+    left: 8px !important; /* Tüm noktalar aynı pozisyonda */
+  }
+
+  .timeline-content {
+    padding: 15px; /* Minimum padding */
+    border-radius: 6px; /* Köşeler */
+    text-align: center; /* Mobilde başlıkları ortala */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.1rem; /* Başlık boyutu */
+    margin-bottom: 5px;
+    text-align: center; /* Başlığı ortala */
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem; /* Metin boyutu */
+    line-height: 1.3;
+  }
+
+  /* Tech Tags Çok Küçük Mobil */
+  .tech-tags {
+    gap: 4px; /* Minimum gap */
+    margin-top: 6px;
+  }
+
+  .tech-tag {
+    padding: 3px 8px; /* Minimum padding */
+    font-size: 0.7rem; /* Font boyutu */
+    border-radius: 8px; /* Köşeler */
+  }
+
+  /* Contact Buttons Çok Küçük Mobil */
+  .contact-buttons {
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .cv-btn {
+    font-size: 0.9rem;
+    padding: 12px 20px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
   }
 }

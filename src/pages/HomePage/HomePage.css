@@ -46,6 +46,7 @@
   box-shadow: 0 0 25px rgba(0, 123, 255, 0.7);
   animation: fadeInZoom 1.5s forwards ease-out;
   animation-delay: 0.8s;
+  order: 2; /* Masaüstünde sağda */
 }
 
 @keyframes fadeInZoom {
@@ -61,11 +62,12 @@
 
 .hero-text-content {
   flex: 1;
-  max-width: 600px; /* Metin genişliğini sınırla */
-  text-align: left; /* Metni sola hizala */
-  display: flex; /* İçindeki öğeleri (başlık, alt başlık, açıklama, butonlar) dikeyde sıralamak için */
-  flex-direction: column; /* İçindeki öğeleri dikeyde sırala */
-  align-items: flex-start; /* İçindeki öğeleri sola hizala */
+  max-width: 600px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  order: 1; /* Masaüstünde solda */
 }
 
 .hero-title {
@@ -210,62 +212,148 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 20px 15px;
+    min-height: calc(100vh - 80px - 40px);
+  }
+  
   .hero-content {
     flex-direction: column;
-    text-align: center; /* Fotoğraf ve metni ortala */
-    gap: 30px;
-    margin-bottom: 30px;
+    text-align: center;
+    gap: 25px;
+    margin-bottom: 20px;
   }
+  
   .profile-picture {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
+    border-width: 4px;
+    order: 1; /* Mobilde üstte */
   }
+  
   .hero-text-content {
-    text-align: center; /* Mobil metni ortala */
-    align-items: center; /* Mobil cihazlarda metni ve butonları ortaya al */
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+    order: 2; /* Mobilde altta */
+    max-width: 90%; /* Mobilde daha dar genişlik */
   }
+  
   .hero-title,
   .hero-title-line1,
   .hero-title-line2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 1.1;
+    margin-bottom: 15px;
   }
+  
   .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
   }
+  
   .hero-description {
-    font-size: 0.9rem;
-    margin-bottom: 25px;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 85%; /* Mobilde açıklama yazısını daha dar yap */
   }
+  
   .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-    width: 80%; /* Mobil cihazlarda daha dar */
-    max-width: unset; /* Mobil cihazda max-width'i sıfırla */
-    justify-content: center; /* Mobil cihazlarda butonları kendi içinde ortala */
-  }
-  .btn {
+    flex-direction: row;
+    gap: 12px;
     width: 100%;
-    padding: 10px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    width: auto;
+    min-width: 140px;
+    padding: 12px 20px;
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .profile-picture {
-    width: 120px;
-    height: 120px;
+  .hero-section {
+    padding: 15px 10px;
   }
+  
+  .hero-content {
+    gap: 20px;
+  }
+  
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+    order: 1; /* Küçük mobilde de üstte */
+  }
+  
+  .hero-text-content {
+    order: 2; /* Küçük mobilde de altta */
+    max-width: 95%; /* Küçük mobilde biraz daha geniş */
+  }
+  
+  .hero-title,
+  .hero-title-line1,
+  .hero-title-line2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    max-width: 90%; /* Küçük mobilde de dar tut */
+    line-height: 1.6; /* Biraz daha fazla satır aralığı */
+  }
+  
+  .hero-buttons {
+    gap: 10px;
+  }
+  
+  .btn {
+    min-width: 120px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-text-content {
+    max-width: 100%; /* Çok küçük ekranlarda tam genişlik */
+  }
+  
+  .hero-description {
+    max-width: 95%; /* Çok küçük ekranlarda da dar tut */
+    font-size: 0.85rem;
+    line-height: 1.7; /* Daha fazla satır aralığı */
+  }
+  
   .hero-title,
   .hero-title-line1,
   .hero-title-line2 {
     font-size: 1.6rem;
   }
+  
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
-  .hero-description {
-    font-size: 0.8rem;
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .btn {
+    width: 100%;
+    min-width: unset;
   }
 }

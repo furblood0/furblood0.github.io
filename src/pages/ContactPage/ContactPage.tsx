@@ -151,30 +151,6 @@ const ContactPage: React.FC = () => {
                 <p>24 saat içinde</p>
               </div>
             </div>
-
-            <div className="social-links">
-              <h3>Sosyal Medya</h3>
-              <div className="social-icons">
-                <a 
-                  href="https://github.com/furblood0" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="social-icon"
-                  title="GitHub"
-                >
-                  <i className="fab fa-github"></i>
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/furkan-f-7aa780226/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="social-icon"
-                  title="LinkedIn"
-                >
-                  <i className="fab fa-linkedin"></i>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>

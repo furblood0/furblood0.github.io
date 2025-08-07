@@ -8,6 +8,9 @@ const HomePage: React.FC = () => {
     <section className="homepage">
       <div className="hero-section">
         <div className="hero-content">
+          {/* Profil resmini en üste taşıdık */}
+          <img src={`${import.meta.env.BASE_URL}assets/profile.jpeg`} alt="Furkan Fidan'ın Profil Fotoğrafı" className="profile-picture" />
+          
           {/* Metin içeriği */}
           <div className="hero-text-content">
             <h1 className="hero-title">
@@ -26,8 +29,6 @@ const HomePage: React.FC = () => {
               <Link to="/contact" className="btn btn-secondary">İletişime Geç</Link>
             </div>
           </div>
-          {/* Profil resmini sağda tutuyoruz */}
-          <img src={`${import.meta.env.BASE_URL}assets/profile.jpeg`} alt="Furkan Fidan'ın Profil Fotoğrafı" className="profile-picture" />
         </div>
       </div>
     </section>

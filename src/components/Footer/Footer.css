@@ -2,30 +2,57 @@
 .footer {
   background-color: #1a1a1a;
   color: #e0e0e0;
-  padding: 15px 20px; /* Üstten ve alttan boşluğu daha da azaltıyoruz */
-  font-size: 0.85rem; /* Genel yazı boyutunu küçültüyoruz */
+  padding: 15px 20px;
+  font-size: 0.85rem;
   border-top: 1px solid #333;
   width: 100%;
   box-sizing: border-box;
-  text-align: center; /* Metni ortaya hizala */
+  text-align: center;
   flex-shrink: 0; /* Sayfanın altına yapışmasını sağlar */
+  margin-top: auto; /* Footer'ı sayfanın en altına iter */
 }
 
 .footer-bottom {
   text-align: center;
-  margin: 0; /* Boşlukları kaldır */
-  padding: 0; /* Boşlukları kaldır */
+  margin: 0;
+  padding: 0;
   color: #aaa;
-  font-size: 0.8rem; /* Telif hakkı yazısının boyutunu ayarla */
+  font-size: 0.8rem;
 }
 
 /* Duyarlı tasarım (Responsive Adjustments) */
 @media (max-width: 768px) {
   .footer {
-    padding: 10px 15px; /* Daha küçük ekranlarda paddingi daha da azalt */
+    padding: 8px 15px; /* Mobilde daha az padding */
+    font-size: 0.8rem;
   }
 
   .footer-bottom {
-    font-size: 0.7rem; /* Küçük ekranlarda telif hakkı boyutu */
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 6px 10px; /* Daha da kompakt */
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 4px 8px; /* En kompakt */
+    font-size: 0.7rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.65rem;
+    line-height: 1;
   }
 }
