@@ -1,53 +1,64 @@
 # Furkan Fidan - Kişisel Portföy Sitesi
 
-Bu proje, Furkan Fidan'ın kişisel portföy web sitesidir. React, TypeScript ve Vite kullanılarak geliştirilmiş modern, responsive ve kapsamlı bir web uygulamasıdır.
+Modern, responsive ve full-stack özelliklerle donatılmış profesyonel portföy web sitesi. React, TypeScript, Express.js ve SQLite kullanılarak geliştirilmiştir.
 
 ## 🚀 Özellikler
 
-### 🎨 **Modern Teknoloji Stack**
-- **React 19** - En son React sürümü ile modern hooks ve özellikler
+### 🎨 **Frontend**
+- **React 19** - Modern React hooks ve özellikler
 - **TypeScript** - Tip güvenliği ve geliştirici deneyimi
 - **Vite** - Hızlı build tool ve development server
 - **React Router DOM** - Client-side routing
 - **React Markdown** - Blog içerikleri için markdown desteği
+- **Responsive Design** - Mobile-first yaklaşım
+- **Modern UI/UX** - CSS Grid, Flexbox, animations
 
-### 📱 **Responsive Tasarım**
-- **Mobile-First** yaklaşım
-- **CSS Grid & Flexbox** ile modern layout
-- **Tüm cihazlarda** mükemmel görünüm (Desktop, Tablet, Mobile)
-- **Touch-friendly** navigasyon
-
-### 📝 **Blog Sistemi**
-- **Markdown desteği** ile zengin içerik
-- **Kategori ve etiket sistemi**
-- **Okuma süresi** hesaplama
-- **Arama ve filtreleme** özellikleri
-- **Responsive blog layout**
-
-### 💼 **Proje Vitrini**
-- **9 farklı proje** kategorisi
-- **Detaylı proje açıklamaları**
-- **Teknoloji stack'i** gösterimi
-- **GitHub ve demo linkleri**
-- **Proje görselleri**
-- **Kategori filtreleme**
+### 🖥️ **Backend**
+- **Express.js** - Node.js web framework
+- **SQLite** - Hafif ve güvenilir veritabanı
+- **RESTful API** - Standart HTTP endpoint'leri
+- **CORS** - Cross-origin resource sharing
+- **Authentication** - Güvenli admin girişi
+- **Input Validation** - Kapsamlı veri doğrulama
 
 ### 📧 **İletişim Sistemi**
-- **Modern contact form**
-- **Sosyal medya linkleri**
-- **Email entegrasyonu**
-- **Responsive contact layout**
+- **Contact Form** - Backend entegreli iletişim formu
+- **Message Storage** - SQLite veritabanında mesaj saklama
+- **Admin Panel** - Mesaj yönetimi için güvenli panel
+- **Real-time Updates** - Anlık mesaj güncellemeleri
+- **Form Validation** - Client ve server-side doğrulama
 
-### 🎯 **Performans Optimizasyonları**
-- **Lazy loading** ile hızlı sayfa yükleme
-- **Image optimization**
-- **Code splitting**
-- **Bundle optimization**
+### 📝 **Blog Sistemi**
+- **Markdown Support** - Zengin içerik desteği
+- **Categories & Tags** - Kategori ve etiket sistemi
+- **Reading Time** - Okuma süresi hesaplama
+- **Search & Filter** - Arama ve filtreleme özellikleri
+- **Responsive Layout** - Mobil uyumlu blog tasarımı
+
+### 💼 **Proje Vitrini**
+- **9 Projects** - Farklı kategorilerde projeler
+- **Detailed Descriptions** - Detaylı proje açıklamaları
+- **Technology Stack** - Teknoloji stack'i gösterimi
+- **GitHub Links** - Kaynak kod linkleri
+- **Live Demos** - Canlı demo linkleri
+- **Category Filtering** - Kategori bazlı filtreleme
+
+### 🎯 **Performans**
+- **Lazy Loading** - Hızlı sayfa yükleme
+- **Image Optimization** - Görsel optimizasyonu
+- **Code Splitting** - Kod bölme
+- **Bundle Optimization** - Bundle optimizasyonu
+- **Caching** - Önbellekleme stratejileri
 
 ## 📁 Proje Yapısı
 
 ```
 mySite/
+├── backend/                   # Backend API sistemi
+│   ├── server.js             # Express.js server
+│   ├── package.json          # Backend dependencies
+│   ├── messages.db           # SQLite veritabanı
+│   └── README.md             # Backend dokümantasyonu
 ├── public/                    # Statik dosyalar
 │   ├── assets/               # Görseller ve dosyalar
 │   │   ├── img1.jpg         # Proje görselleri
@@ -55,7 +66,7 @@ mySite/
 │   │   ├── img3.jpg
 │   │   ├── img4.jpg
 │   │   ├── profile.jpeg     # Profil fotoğrafı
-│   │   └── Furkan_Fidan_CV.pdf # CV dosyası
+│   │   └── cv.pdf           # CV dosyası
 │   └── favicon.ico          # Site ikonu
 ├── src/
 │   ├── components/          # Yeniden kullanılabilir bileşenler
@@ -68,7 +79,8 @@ mySite/
 │   │   ├── ProjectsPage/   # Projeler - 9 farklı proje
 │   │   ├── BlogPage/       # Blog listesi - 3 blog yazısı
 │   │   ├── BlogPostDetail/ # Blog detay - Markdown render
-│   │   └── ContactPage/    # İletişim - Contact form
+│   │   ├── ContactPage/    # İletişim - Backend entegreli form
+│   │   └── AdminPage/      # Admin panel - Mesaj yönetimi
 │   ├── data/               # Veri dosyaları
 │   │   ├── projects.ts     # 9 proje verisi
 │   │   └── blogPosts.ts    # 3 blog yazısı
@@ -78,7 +90,7 @@ mySite/
 │   └── index.css           # Global CSS
 ├── .github/                # GitHub Actions workflow
 ├── .gitignore             # Git ignore dosyası
-├── package.json           # Proje bağımlılıkları
+├── package.json           # Frontend bağımlılıkları
 ├── tsconfig.json          # TypeScript konfigürasyonu
 ├── vite.config.ts         # Vite konfigürasyonu
 ├── README.md              # Proje dokümantasyonu
@@ -87,7 +99,7 @@ mySite/
 └── SECURITY.md            # Güvenlik politikası
 ```
 
-## 🛠️ Kurulum ve Geliştirme
+## 🛠️ Kurulum
 
 ### 📋 Gereksinimler
 - **Node.js** 18.0.0 veya üzeri
@@ -96,22 +108,44 @@ mySite/
 
 ### 🚀 Hızlı Başlangıç
 
+#### 1. Repository'yi Klonlayın
 ```bash
-# Repository'yi klonlayın
 git clone https://github.com/furblood0/furblood0.github.io.git
 cd furblood0.github.io
+```
 
-# Bağımlılıkları yükleyin
+#### 2. Frontend Kurulumu
+```bash
+# Frontend bağımlılıklarını yükleyin
 npm install
 
 # Geliştirme sunucusunu başlatın
 npm run dev
 ```
 
-Tarayıcınızda `http://localhost:5173` adresini açın.
+#### 3. Backend Kurulumu
+```bash
+# Backend klasörüne gidin
+cd backend
 
-### 📦 Mevcut Scriptler
+# Backend bağımlılıklarını yükleyin
+npm install
 
+# Environment variables ayarlayın
+# .env dosyası oluşturun ve ADMIN_PASSWORD ekleyin
+echo "ADMIN_PASSWORD=your_secure_password" > .env
+
+# Backend sunucusunu başlatın
+npm start
+```
+
+#### 4. Tarayıcıda Açın
+- **Frontend**: http://localhost:5173
+- **Backend**: http://localhost:3001
+
+## 📦 Scriptler
+
+### Frontend Scriptler
 ```bash
 # Geliştirme sunucusu (hot reload ile)
 npm run dev
@@ -124,133 +158,125 @@ npm run preview
 
 # Lint kontrolü
 npm run lint
-
-# TypeScript tip kontrolü
-npm run type-check
 ```
 
-### 🔧 Geliştirme Ortamı
+### Backend Scriptler
+```bash
+# Production sunucusu
+npm start
 
-- **Hot Module Replacement (HMR)** - Kod değişikliklerinde anında güncelleme
-- **TypeScript** - Gerçek zamanlı tip kontrolü
-- **ESLint** - Kod kalitesi kontrolü
-- **Vite DevTools** - Geliştirme araçları
+# Geliştirme sunucusu (nodemon ile)
+npm run dev
+```
 
-## 📝 Kullanılan Teknolojiler
+## 🗄️ Veritabanı
 
-### 🎯 **Frontend Framework**
-- **React 19.1.1** - Modern React hooks ve özellikler
-- **TypeScript 5.8.3** - Tip güvenliği ve geliştirici deneyimi
-- **React Router DOM 7.7.1** - Client-side routing
+### SQLite Yapısı
+```sql
+CREATE TABLE messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  subject TEXT NOT NULL,
+  message TEXT NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
 
-### 🛠️ **Build Tools & Development**
-- **Vite 7.0.6** - Hızlı build tool ve dev server
-- **SWC** - Hızlı JavaScript/TypeScript compiler
-- **ESLint 9.30.1** - Kod kalitesi kontrolü
+### Veritabanı Özellikleri
+- **Otomatik oluşturma** - İlk çalıştırmada tablo oluşturulur
+- **Primary key** - Otomatik artan ID
+- **Tarih damgası** - Mesaj gönderim zamanı
+- **Veri bütünlüğü** - NOT NULL kısıtlamaları
 
-### 📚 **Content & Styling**
-- **React Markdown 10.1.0** - Markdown render etme
-- **Remark GFM 4.0.1** - GitHub Flavored Markdown
-- **React Icons 5.5.0** - İkon kütüphanesi
-- **CSS3** - Modern styling ve animations
+## 🔐 Güvenlik
 
-### 🔧 **Development Tools**
-- **TypeScript ESLint** - TypeScript linting
-- **React Hooks ESLint Plugin** - Hooks kuralları
-- **React Refresh Plugin** - Hot reload
+### Frontend Güvenlik
+- **XSS Koruması** - Input sanitization
+- **CSRF Koruması** - Token tabanlı koruma
+- **Input Validation** - Client-side doğrulama
+- **Secure Headers** - Güvenli HTTP header'ları
 
-### 📦 **Package Management**
-- **npm** - Package manager
-- **Node.js 18+** - Runtime environment
+### Backend Güvenlik
+- **SQL Injection Koruması** - Parameterized queries
+- **Input Validation** - Server-side doğrulama
+- **Authentication** - Şifre tabanlı giriş
+- **CORS Configuration** - Cross-origin resource sharing
+- **Environment Variables** - Güvenli konfigürasyon
 
-## 🚀 GitHub Pages Deployment
+## 🚀 Deployment
 
-Bu proje GitHub Pages ile otomatik olarak deploy edilir. Her `main` branch'e push yaptığınızda otomatik olarak güncellenir.
-
-### 🎯 **Deployment Özellikleri**
-- **Otomatik Build** - Her commit'te otomatik build
+### Frontend - GitHub Pages
+- **Otomatik Deployment** - Her commit'te otomatik build
 - **GitHub Actions** - CI/CD pipeline
-- **Cache Optimization** - Hızlı build süreleri
 - **HTTPS** - Güvenli bağlantı
 - **Custom Domain** - furblood0.github.io
 
-### 📋 **Deployment Adımları**
+### Backend - Render.com
+- **Cloud Hosting** - Render.com üzerinde hosting
+- **Automatic Deployments** - Git push ile otomatik deploy
+- **HTTPS** - SSL sertifikası
+- **Environment Variables** - Güvenli konfigürasyon
+- **Logs & Monitoring** - Performans izleme
 
-1. **GitHub'da repository oluşturun** (örn: `furblood0.github.io`)
-2. **Repository'yi klonlayın**:
-   ```bash
-   git clone https://github.com/furblood0/furblood0.github.io.git
-   ```
-3. **Proje dosyalarını kopyalayın**
-4. **GitHub Pages'i aktifleştirin**:
-   - Repository Settings > Pages
-   - Source: "GitHub Actions" seçin
-5. **Push yapın**:
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
+## 📡 API Endpoints
 
-### 🔧 **GitHub Actions Workflow**
+### 🔐 Admin Authentication
+- **POST** `/api/admin/login` - Admin panel girişi
 
-`.github/workflows/deploy.yml` dosyası şunları yapar:
-- **Node.js 18** kullanır
-- **npm ci** ile hızlı dependency yükleme
-- **Build optimization** ile küçük bundle
-- **Artifact upload** ile GitHub Pages'e deploy
-- **Concurrent deployment** koruması
+### 📧 Mesaj Yönetimi
+- **POST** `/api/contact` - Mesaj gönderme
+- **GET** `/api/messages` - Tüm mesajları listeleme
+- **GET** `/api/messages/:id` - Belirli mesajı getirme
+- **DELETE** `/api/messages/:id` - Mesaj silme
 
-### 📊 **Build Performansı**
-- **Build Time**: ~2-3 dakika
-- **Bundle Size**: Optimized
-- **Cache Hit Rate**: %95+
-- **Deployment Time**: ~1 dakika
+## 📊 Proje İstatistikleri
 
-## 🔗 Canlı Demo
-
-🌐 **GitHub Pages**: https://furblood0.github.io/
-
-## 📊 **Proje İstatistikleri**
-
-### 💼 **Projeler**
+### 💼 Projeler
 - **Toplam Proje**: 9 adet
 - **Kategoriler**: Full-Stack, Frontend, Mobile, Desktop, Web Game, Browser Extension
 - **Öne Çıkan Projeler**: 3 adet
 - **Teknolojiler**: React, Node.js, Android, Python, Java, JavaScript
 
-### 📝 **Blog Yazıları**
+### 📝 Blog Yazıları
 - **Toplam Yazı**: 3 adet
 - **Kategoriler**: React, TypeScript, CSS
 - **Ortalama Okuma Süresi**: 5-7 dakika
 - **Markdown Desteği**: ✅
 
-### 🎯 **Teknik Özellikler**
-- **Sayfa Sayısı**: 6 adet
-- **Component Sayısı**: 15+ adet
+### 🎯 Teknik Özellikler
+- **Sayfa Sayısı**: 7 adet (Admin panel dahil)
+- **Component Sayısı**: 20+ adet
 - **Responsive Breakpoint**: 3 adet
 - **Build Time**: ~2-3 dakika
+- **API Endpoint'leri**: 4 adet
 
-## 📧 **İletişim**
+## 🔗 Canlı Demo
+
+🌐 **Frontend (GitHub Pages)**: https://furblood0.github.io/
+
+🖥️ **Backend API (Render.com)**: https://furblood0-github-io.onrender.com/
+
+## 📧 İletişim
 
 - **GitHub**: [@furblood0](https://github.com/furblood0)
 - **Email**: furkanfidan.2357@gmail.com
 - **LinkedIn**: [Furkan Fidan](https://linkedin.com/in/furkanfidan)
 - **Portfolio**: https://furblood0.github.io/
 
-## 📄 **Lisans**
+## 📄 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-## 🤝 **Katkıda Bulunma**
+## 🤝 Katkıda Bulunma
 
 Bu projeye katkıda bulunmak istiyorsanız, lütfen [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
 
-## 🛡️ **Güvenlik**
+## 🛡️ Güvenlik
 
 Güvenlik açıkları için [SECURITY.md](SECURITY.md) dosyasına bakın.
 
-## 🚀 **Gelecek Planları**
+## 🚀 Gelecek Planları
 
 - [ ] **Dark Mode** desteği
 - [ ] **PWA** (Progressive Web App) özellikleri
@@ -258,6 +284,8 @@ Güvenlik açıkları için [SECURITY.md](SECURITY.md) dosyasına bakın.
 - [ ] **Proje filtreleme** geliştirmeleri
 - [ ] **SEO optimizasyonları**
 - [ ] **Analytics** entegrasyonu
+- [ ] **Email notifications** sistemi
+- [ ] **File upload** özelliği
 
 ---
 

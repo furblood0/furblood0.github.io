@@ -52,7 +52,12 @@ function createTable() {
 }
 
 // Admin şifresi (environment variable'dan oku)
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin1642';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+if (!ADMIN_PASSWORD) {
+  console.error('ADMIN_PASSWORD environment variable tanımlanmamış!');
+  process.exit(1);
+}
 
 // Admin authentication endpoint'i
 app.post('/api/admin/login', (req, res) => {
