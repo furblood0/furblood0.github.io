@@ -18,10 +18,14 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: 'localhost',
+    host: true, // localhost yerine true kullanarak tüm network interface'lerini dinle
     strictPort: true,
     hmr: {
       port: 5173
+    },
+    headers: {
+      'Cross-Origin-Embedder-Policy': 'require-corp',
+      'Cross-Origin-Opener-Policy': 'same-origin',
     }
   },
   optimizeDeps: {
@@ -29,5 +33,9 @@ export default defineConfig({
   },
   resolve: {
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+  },
+  assetsInclude: ['**/*.ico', '**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
+  define: {
+    global: 'globalThis',
   }
 })
