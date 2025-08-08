@@ -42,6 +42,7 @@ jobs:
         run: |
           cp public/_redirects dist/
           cp public/.nojekyll dist/
+          cp public/_headers dist/
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
